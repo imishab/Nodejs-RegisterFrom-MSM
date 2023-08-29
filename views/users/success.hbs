@@ -1,0 +1,84 @@
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        background-color: #fefefe;
+    }
+
+    .success-container {
+        text-align: center;
+    }
+
+
+
+    .success-message {
+        font-size: 24px;
+        margin-top: 20px;
+        color: #333;
+    }
+
+    .buttons {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 30px;
+        opacity: 0;
+        animation: fadeUp 1s 2s forwards;
+    }
+
+    .button {
+        padding: 10px 20px;
+        background-color: #27ae60;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+    .button:hover {
+        background-color: #219651;
+    }
+
+    @keyframes bounce {
+
+        0%,
+        100% {
+            transform: translateY(0);
+        }
+
+        50% {
+            transform: translateY(-20px);
+        }
+    }
+
+    @keyframes fadeUp {
+        0% {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+</style>
+
+<div class="success-container">
+    <center>
+        <img src="images/1.gif" alt="Computer man" style="width:150;height:150;">
+    </center>
+    <div class="success-message">Registration Successful!</div>
+
+</div>
+
+<script>
+    // Redirect to another page after 3 seconds
+    setTimeout(function () {
+        window.location.href = '/Registered'; // Replace with the URL of the page you want to redirect to
+    }, 3000); // 3000 milliseconds = 3 seconds
+</script>
