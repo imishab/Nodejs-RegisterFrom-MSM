@@ -28,7 +28,7 @@
   bottom: 0;
   left: 0;
   z-index: 9999;
-  background-color: #0c0c0c;
+  background-color: black;
   opacity: 1;
   visibility: visible;
   -webkit-transition: all 0.3s ease-in-out;
@@ -54,7 +54,7 @@
 }
 
 .loader__logo {
-  width: 100px;
+  width: 200px;
 }
 .loader__logo img {
   display: block;

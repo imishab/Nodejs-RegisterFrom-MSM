@@ -6,13 +6,40 @@
         text-align: center;
         margin-top: 20px;
     }
+
+    .imgg {
+        width: 200px;
+        margin-bottom: 10px;
+    }
+
+    .img2 {
+        width: 500px;
+    }
+
+    .text1 {
+        animation: color-change 7s infinite;
+    }
+
+    @keyframes color-change {
+        0% {
+            color: rgb(255, 116, 116);
+        }
+
+        50% {
+            color: rgba(45, 241, 225, 0.74);
+        }
+
+        100% {
+            color: rgb(226, 222, 0);
+        }
+    }
 </style>
-<!-- Loader Start -->
+<!-- Loader1 Start -->
 <div class="loader">
     <div class="loader">
         <div class="loader__content">
             <div class="loader__logo">
-                <img src="images/logo.png" width="400px">
+                <img class="img2" src="images/intro.gif">
             </div>
         </div>
     </div>
@@ -31,7 +58,8 @@
 
                 <!-- Logo Start -->
                 <div class="logo">
-                    <img src="images/logo.png" style="width: 155px; margin-top:10px">
+                    <img src="images/msmlogo.png" style="    width: 124px;
+    margin-top: 7px;">
                 </div>
                 <!-- Logo End -->
 
@@ -39,10 +67,7 @@
             <div class="col-6 fullheight header__right">
 
                 <!-- Say Hello Button Start -->
-                <a href="#0" id="sayhello-trigger" class="btn btn-s sayhello-trigger">
-                    <span class="title">Connect With Us</span>
-                    <span class="hover">Connect With Us</span>
-                </a>
+
                 <!-- Say Hello Button End -->
 
                 <!-- Menu Trigger Start -->
@@ -94,12 +119,18 @@
                             <!-- Headline Start -->
                             <div id="headline" class="headline centered-mobile text-center">
                                 <span class="headline__subtitle">MSM Kozhikode North Presents</span>
+                                <center><img class="imgg" src="images/logo1.png"></center>
+
                                 <div class="d-md-flex align-items-md-center justify-content-md-center">
                                     <h2 style="font-weight: 500;" class="headline__title title-centered">Higher
                                         Secondary Students Conference</h2>
 
                                 </div>
-                                <p id="countdown"></p>
+                                <p style="margin-top: 24px; margin-bottom: -26px; font-weight:400; color:white;">The
+                                    <b>program is
+                                        scheduled to start on :</b>
+                                </p>
+                                <p class="text1" id="countdown"></p>
 
 
                                 <div class="headline__btnholder">
@@ -107,8 +138,7 @@
                                         <span class="btn-title">Register Now</span>
                                         <span class="btn-hover">Register Now</span>
                                     </a>
-                                    <a href="#" id="sayhello-trigger"
-                                        class="btn btn-l-icon btn-outline-light sayhello-trigger">
+                                    <a href="#" id="sayhello-trigger" class="btn btn-l-icon btn-outline-light">
                                         <span class="btn-icon-title">Contact Us</span>
                                         <span class="btn-icon-anim"><i class="fa-solid fa-play"></i></span>
                                     </a>
@@ -128,31 +158,33 @@
                                             <!-- Home screen socials links -->
                                             <ul class="socials d-flex align-items-start">
                                                 <li>
-                                                    <a class="btn btn-s-text" href="https://www.facebook.com/"
+                                                    <a class="btn btn-s-text" href="https://www.facebook.com/msm.north"
                                                         target="_blank">
                                                         <span class="title">Fb</span>
                                                         <span class="hover">Fb</span>
                                                     </a>
                                                 </li>
                                                 <li>
-                                                    <a class="btn btn-s-text" href="https://www.instagram.com"
+                                                    <a class="btn btn-s-text"
+                                                        href="https://www.instagram.com/msm_kozhikodenorth/?hl=en"
                                                         target="_blank">
                                                         <span class="title">In</span>
                                                         <span class="hover">In</span>
                                                     </a>
                                                 </li>
                                                 <li>
-                                                    <a class="btn btn-s-text" href="https://twitter.com/"
+                                                    <a class="btn btn-s-text"
+                                                        href="https://www.youtube.com/@msmkozhikodenorth3067"
                                                         target="_blank">
-                                                        <span class="title">Tw</span>
-                                                        <span class="hover">Tw</span>
+                                                        <span class="title">Yt</span>
+                                                        <span class="hover">Yt</span>
                                                     </a>
                                                 </li>
                                                 <li>
-                                                    <a class="btn btn-s-text" href="https://www.behance.net/"
+                                                    <a class="btn btn-s-text" href="https://wa.link/u4y7se"
                                                         target="_blank">
-                                                        <span class="title">Be</span>
-                                                        <span class="hover">Be</span>
+                                                        <span class="title">Wa</span>
+                                                        <span class="hover">Wa</span>
                                                     </a>
                                                 </li>
                                             </ul>
@@ -192,25 +224,27 @@
                     <!-- Home screen socials links -->
                     <ul class="socials">
                         <li>
-                            <a class="btn btn-s-text" href="https://www.facebook.com/" target="_blank">
+                            <a class="btn btn-s-text" href=" https://www.facebook.com/msm.north" target="_blank">
                                 <span class="title">Fb</span>
                                 <span class="hover">Fb</span>
                             </a>
                         </li>
                         <li>
-                            <a class="btn btn-s-text" href="https://www.instagram.com" target="_blank">
+                            <a class="btn btn-s-text" href="https://www.instagram.com/msm_kozhikodenorth/?hl=en"
+                                target="_blank">
                                 <span class="title">In</span>
                                 <span class="hover">In</span>
                             </a>
                         </li>
                         <li>
-                            <a class="btn btn-s-text" href="https://twitter.com/" target="_blank">
+                            <a class="btn btn-s-text" href="https://www.youtube.com/@msmkozhikodenorth3067"
+                                target="_blank">
                                 <span class="title">Yt</span>
                                 <span class="hover">Yt</span>
                             </a>
                         </li>
                         <li>
-                            <a class="btn btn-s-text" href="https://www.behance.net/" target="_blank">
+                            <a class="btn btn-s-text" href="https://wa.link/u4y7se" target="_blank">
                                 <span class="title">Wa</span>
                                 <span class="hover">Wa</span>
                             </a>
@@ -353,7 +387,7 @@
 
             <!-- Say Hello Popup Title Start -->
             <div class="popup-title">
-                <p class="popup-title__title">Let's talk!</p>
+                <p class="popup-title__title">Contact Us</p>
             </div>
             <!-- Say Hello Popup Title End -->
 
@@ -369,32 +403,13 @@
                 <!-- Reply Messages End-->
 
                 <!-- Contact Form Start -->
-                <form class="form form-light sayhello-form" id="sayhello-form">
-                    <!-- Hidden Required Fields -->
-                    <input type="hidden" name="project_name" value="Ignite - Coming Soon and Landing Page Template">
-                    <input type="hidden" name="admin_email" value="support@mixdesign.club">
-                    <input type="hidden" name="form_subject" value="Contact Form Message">
-                    <!-- END Hidden Required Fields-->
-                    <div class="container-fluid px-0">
-                        <div class="row gx-5">
-                            <div class="col-12 col-md-6">
-                                <input class="" type="text" name="Name" placeholder="Your Name" required>
-                            </div>
-                            <div class="col-12 col-md-6">
-                                <input class="" type="text" name="Company" placeholder="Your Email" required>
-                            </div>
-                            <div class="col-12">
-                                <textarea class="margin-l" name="Message" placeholder="A Few Words" required></textarea>
-                            </div>
-                            <div class="col-12">
-                                <button class="btn btn-l btn-light" type="submit">
-                                    <span class="btn-title">Send</span>
-                                    <span class="btn-hover">Send</span>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </form>
+                <ul>
+                    <h5>
+                        <li><i class="fa-solid fa-phone"></i><b> Phone Number : </b>+91 91585 55799 </li><br>
+                        <li><i class="fa-solid fa-phone"></i> <b> Phone Number : </b>+91 99463 77551 </li><br>
+                        <li><i class="fa-regular fa-envelope"></i> <b>Email : </b>msm.cltn@gmail.com</li>
+                    </h5>
+                </ul>
                 <!-- Contact Form End  -->
 
             </div>
