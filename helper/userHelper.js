@@ -37,7 +37,7 @@ module.exports = {
           client.messages
             .create({
               body: `
-              Hi *${userData.Name}* 👋🏻 Assalamu alaykum, Thank you for registering for the *Msm high-sec 2023 program!* 🎉  To keep you updated and connected with other participants, we have created a WhatsApp group for the event. 📲 Please click on the link below to join : 👉 https://chat.whatsapp.com/LIeYbc16uBk7AyvbszKNPG Once again, thank you for your registration, and we look forward to seeing you at the event! 🤝 Best regards, *Team MSM Kozhikode North HighSec 2023* `,
+              Hi *${userData.Name}* 👋🏻 Assalamu alaykum,\nThank you for registering for the *Msm high-sec 2023 program!* 🎉\nTo keep you updated and connected with other participants, we have created a WhatsApp group for the event.\n📲 Please click on the link below to join : 👉 https://chat.whatsapp.com/LIeYbc16uBk7AyvbszKNPG\n\nOnce again, thank you for your registration, and we look forward to seeing you at the event! 🤝\nBest regards,\n*Team MSM Kozhikode North*\n*HighSec 2023* `,
               from: "whatsapp:+14155238886",
               to: `whatsapp:${"+91" + userData.whatsapp}`,
             })
