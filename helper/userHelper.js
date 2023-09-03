@@ -3,11 +3,17 @@ var collections = require("../config/collections");
 const bcrypt = require("bcrypt");
 const objectId = require("mongodb").ObjectID;
 const Razorpay = require("razorpay");
+const twilio = require("twilio");
 
 var instance = new Razorpay({
   key_id: "rzp_test_8NokNgt8cA3Hdv",
   key_secret: "xPzG53EXxT8PKr34qT7CTFm9",
 });
+
+const client = new twilio(
+  "ACab02ddbeaeacc33ca276f880a8dcec99",
+  "9ad9a3f96bb572da00d68e1e7498674f"
+);
 
 module.exports = {
   getAllProducts: () => {
@@ -21,13 +27,25 @@ module.exports = {
     });
   },
 
-  doSignup: (userData) => {
+  doSignup: (userData, res) => {
     return new Promise(async (resolve, reject) => {
       // userData.Password = await bcrypt.hash(userData.Password, 10);
       db.get()
         .collection(collections.USERS_COLLECTION)
         .insertOne(userData)
         .then((data) => {
+          client.messages
+            .create({
+              body: `Hi ${userData.Name}, Thank you for registering Msm HighSec 2023. Join to our whatsapp group now https://chat.whatsapp.com/CWfGNxOUCfF9qA5aLv0W05 `,
+              from: "whatsapp:+14155238886",
+              to: `whatsapp:${"+91" + userData.whatsapp}`,
+            })
+            .then((message) => {
+              console.log(
+                `WhatsApp message sent: ${message.sid} & ${userData.whatsapp}`
+              );
+            });
+
           resolve(data.ops[0]);
         });
     });

@@ -319,8 +319,9 @@
                                 <input class="" type="text" name="Age" placeholder="Your Age" required>
                             </div>
                             <div class="col-12 col-md-6">
-                                <select class="" name="Zone">
-                                    <option value="None">Select Your Zone</option>
+                                <select class="" name="Zone" required>
+                                    <option hidden="" disabled="disabled" selected="selected" value="">Select Your Zone
+                                    </option>
                                     <option value="Nadapuram">Nadapuram</option>
                                     <option value="Kuttiadi">Kuttiadi</option>
                                     <option value="Perambra">Perambra</option>
@@ -337,8 +338,9 @@
                                 </select>
                             </div>
                             <div class="col-12 col-md-6">
-                                <select class="" name="Vehicle">
-                                    <option value="None">Vehicle Facility</option>
+                                <select class="" name="Vehicle" required>
+                                    <option hidden="" disabled="disabled" selected="selected" value="">Vehicle Facility
+                                    </option>
                                     <option value="Yes">Yes</option>
                                     <option value="No">No</option>
                                     <!-- Add more options as needed -->
@@ -348,8 +350,8 @@
                                 <input class="" type="text" name="Phone" placeholder="Your Phone Number " required>
                             </div>
                             <div class="col-12 col-md-6">
-                                <input class="" type="text" name="Ulternate" placeholder="Your Whatsapp Number"
-                                    required>
+                                <input class="" type="text" id="whatsapp" name="whatsapp"
+                                    placeholder="Your Whatsapp Number" required>
                             </div>
                             {{!-- <input class="" type="text" name="Email" placeholder="Email" required>
                             <input class="" type="text" name="Password" placeholder="Password" required> --}}
