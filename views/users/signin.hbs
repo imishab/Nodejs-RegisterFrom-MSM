@@ -1,12 +1,12 @@
-<div class="row mx-auto">
+{{!-- <div class="row mx-auto">
     <div class="col-md-6 mx-auto">
         <div class="container mt-5">
             <h2 class="text-center">Sign In</h2>
             <form action="/signin" method="POST">
                 {{#if signInErr}}
-                    <div class="alert alert-danger" role="alert">
-                        <p class="error alert-heading">{{signInErr}}</p>
-                    </div>
+                <div class="alert alert-danger" role="alert">
+                    <p class="error alert-heading">{{signInErr}}</p>
+                </div>
                 {{/if}}
                 <div class="form-group mt-4">
                     <label>Email address</label>
@@ -23,4 +23,114 @@
             </form>
         </div>
     </div>
+</div> --}}
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #f2f2f2;
+    }
+
+    .login-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+    }
+
+    .card {
+        background-color: #ffffff;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        width: 300px;
+    }
+
+    h1 {
+        text-align: center;
+        color: #333;
+    }
+
+    input {
+        box-sizing: border-box;
+        width: 100%;
+        padding: 20px;
+        margin-bottom: 10px;
+        border: 3px solid #000000;
+        border-radius: 5px;
+    }
+
+    .input1 {
+        border: 1px solid black;
+        padding: 15px;
+
+    }
+
+    button {
+        width: 100%;
+        padding: 10px;
+        background-color: #3498db;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background-color: #2980b9;
+    }
+
+    .forgot-password {
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    .forgot-password a {
+        color: #3498db;
+        text-decoration: none;
+    }
+
+    .forgot-password a:hover {
+        text-decoration: underline;
+    }
+
+    .img5 {
+        width: 60%;
+
+    }
+</style>
+
+
+<div class="login-container">
+    <div class="card">
+        <center> <img class="img5" src="images/logo2.png"> </center><br>
+        <form>
+            <input class="input1" type="text" placeholder="Username" />
+            <input class="input1" type="password" placeholder="Password" />
+            <button type="submit">Login</button>
+            <div class="forgot-password">
+                <a href="/HighSec-Registration">Back to Home Page</a>
+            </div>
+
+        </form>
+    </div>
 </div>
+
+
+
+
+Hi Habbab 👋🏻
+Thank you for registering for the Msm high-sec 2023 program! 🎉
+To keep you updated and connected with other participants, we have created a WhatsApp group for the event.
+📲 Please click on the link below to join :
+👉 https://chat.whatsapp.com/LIeYbc16uBk7AyvbszKNPG
+
+Once again, thank you for your registration, and we look forward to seeing you at the event! 🤝
+
+Best regards,
+Team MSM Kozhikode North
+HighSec 2023

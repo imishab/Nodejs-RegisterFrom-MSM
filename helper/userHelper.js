@@ -12,7 +12,7 @@ var instance = new Razorpay({
 
 const client = new twilio(
   "ACab02ddbeaeacc33ca276f880a8dcec99",
-  "9ad9a3f96bb572da00d68e1e7498674f"
+  "05ac910ab0de717227667d2b7b93d484"
 );
 
 module.exports = {
@@ -36,7 +36,8 @@ module.exports = {
         .then((data) => {
           client.messages
             .create({
-              body: `Hi ${userData.Name}, Thank you for registering Msm HighSec 2023. Join to our whatsapp group now https://chat.whatsapp.com/CWfGNxOUCfF9qA5aLv0W05 `,
+              body: `
+              Hi *${userData.Name}* 👋🏻 Assalamu alaykum, Thank you for registering for the *Msm high-sec 2023 program!* 🎉  To keep you updated and connected with other participants, we have created a WhatsApp group for the event. 📲 Please click on the link below to join : 👉 https://chat.whatsapp.com/LIeYbc16uBk7AyvbszKNPG Once again, thank you for your registration, and we look forward to seeing you at the event! 🤝 Best regards, *Team MSM Kozhikode North HighSec 2023* `,
               from: "whatsapp:+14155238886",
               to: `whatsapp:${"+91" + userData.whatsapp}`,
             })
