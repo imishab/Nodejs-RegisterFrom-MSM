@@ -19,7 +19,29 @@ router.get("/", async function (req, res, next) {
     cartCount = await userHelper.getCartCount(userId);
   }
   userHelper.getAllProducts().then((products) => {
-    res.render("users/HighSec-Registration", { admin: false, products, user, cartCount });
+    res.render("users/HighSec-Registration", {
+      admin: false,
+      products,
+      user,
+      cartCount,
+    });
+  });
+});
+
+router.get("/registration", async function (req, res, next) {
+  let user = req.session.user;
+  let cartCount = null;
+  if (user) {
+    let userId = req.session.user._id;
+    cartCount = await userHelper.getCartCount(userId);
+  }
+  userHelper.getAllProducts().then((products) => {
+    res.render("users/registration", {
+      admin: false,
+      products,
+      user,
+      cartCount,
+    });
   });
 });
 
@@ -29,11 +51,33 @@ router.get("/success", async function (req, res, next) {
   res.render("users/success", { admin: false });
 });
 
+router.get("/quiz", async function (req, res, next) {
+  let user = req.session.user;
+  let cartCount = null;
+  res.render("users/quiz", { admin: false });
+});
+
 router.get("/Registered", async function (req, res, next) {
   let user = req.session.user;
   let userId = req.session.user._id;
   let cartCount = null;
   res.render("users/Registered", { admin: false, user });
+});
+
+router.get("/registration", function (req, res) {
+  if (req.session.signedIn) {
+    res.redirect("/quiz");
+  } else {
+    res.render("users/registration", { admin: false });
+  }
+});
+
+router.post("/registration", function (req, res) {
+  userHelper.doSignup(req.body).then((response) => {
+    req.session.signedIn = true;
+    req.session.user = response;
+    res.redirect("/quiz");
+  });
 });
 
 router.get("/HighSec-Registration", function (req, res) {
