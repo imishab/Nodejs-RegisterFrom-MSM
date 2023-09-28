@@ -3,17 +3,11 @@ var collections = require("../config/collections");
 const bcrypt = require("bcrypt");
 const objectId = require("mongodb").ObjectID;
 const Razorpay = require("razorpay");
-const twilio = require("twilio");
 
 var instance = new Razorpay({
   key_id: "rzp_test_8NokNgt8cA3Hdv",
   key_secret: "xPzG53EXxT8PKr34qT7CTFm9",
 });
-
-const client = new twilio(
-  "ACab02ddbeaeacc33ca276f880a8dcec99",
-  "05ac910ab0de717227667d2b7b93d484"
-);
 
 module.exports = {
   getAllProducts: () => {
@@ -34,19 +28,6 @@ module.exports = {
         .collection(collections.USERS_COLLECTION)
         .insertOne(userData)
         .then((data) => {
-          client.messages
-            .create({
-              body: `
-              Hi *${userData.Name}* 👋🏻 Assalamu alaykum,\nThank you for registering for the *Msm high-sec 2023 program!* 🎉\nTo keep you updated and connected with other participants, we have created a WhatsApp group for the event.\n📲 Please click on the link below to join : 👉 https://chat.whatsapp.com/LIeYbc16uBk7AyvbszKNPG\n\nOnce again, thank you for your registration, and we look forward to seeing you at the event! 🤝\nBest regards,\n*Team MSM Kozhikode North*\n*HighSec 2023* `,
-              from: "whatsapp:+14155238886",
-              to: `whatsapp:${"+91" + userData.whatsapp}`,
-            })
-            .then((message) => {
-              console.log(
-                `WhatsApp message sent: ${message.sid} & ${userData.whatsapp}`
-              );
-            });
-
           resolve(data.ops[0]);
         });
     });
