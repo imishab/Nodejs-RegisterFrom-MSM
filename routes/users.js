@@ -6,7 +6,7 @@ const verifySignedIn = (req, res, next) => {
   if (req.session.signedIn) {
     next();
   } else {
-    res.redirect("/signin");
+    res.redirect("/registration");
   }
 };
 
@@ -45,16 +45,22 @@ router.get("/registration", async function (req, res, next) {
   });
 });
 
+router.get("/quiz", verifySignedIn, function (req, res) {
+  let user = req.session.user;
+  res.render("users/quiz", { admin: false, user, layout: "lay2" });
+});
+
+router.post("/quiz", function (req, res) {
+  userHelper.addProduct(req.body, (id) => {
+    // Assuming the function addProduct doesn't require image upload
+    res.redirect("/success");
+  });
+});
+
 router.get("/success", async function (req, res, next) {
   let user = req.session.user;
   let cartCount = null;
   res.render("users/success", { admin: false });
-});
-
-router.get("/quiz", async function (req, res, next) {
-  let user = req.session.user;
-  let cartCount = null;
-  res.render("users/quiz", { admin: false });
 });
 
 router.get("/Registered", async function (req, res, next) {

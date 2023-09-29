@@ -33,13 +33,32 @@
             color: rgb(226, 222, 0);
         }
     }
+
+    .blink_me {
+        animation: blinker 3s linear infinite;
+    }
+
+
+
+    @keyframes blinker {
+        50% {
+            opacity: 0;
+        }
+    }
+
+    .loader__logo {
+        width: 248px;
+    }
 </style>
 <!-- Loader1 Start -->
 <div class="loader">
     <div class="loader">
         <div class="loader__content">
             <div class="loader__logo">
-                <img class="img2" src="images/intro.gif">
+                <center>
+                    <img src="/images/logo.png" style="max-width: 170px;" class="blink_me">
+                    <p class="blink_me">Loading...</p>
+                </center>
             </div>
         </div>
     </div>

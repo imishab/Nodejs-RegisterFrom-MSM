@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
+    "dev": "nodemon node ./bin/www",  
     "start": "node ./bin/www"
   },
   "dependencies": {
@@ -18,7 +19,7 @@
     "http-errors": "~1.6.3",
     "mongodb": "^3.6.5",
     "morgan": "~1.9.1",
-    "nodemon": "^2.0.7",
+    "nodemon": "^2.0.22",
     "razorpay": "^2.0.6",
     "tailwindcss": "^3.3.3",
     "twilio": "^4.16.0"

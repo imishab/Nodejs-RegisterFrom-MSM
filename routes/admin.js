@@ -16,14 +16,24 @@ const verifySignedIn = (req, res, next) => {
 router.get("/", verifySignedIn, function (req, res, next) {
   let administator = req.session.admin;
   adminHelper.getAllProducts().then((products) => {
-    res.render("admin/home", { admin: true, products, administator });
+    res.render("admin/home", {
+      admin: true,
+      layout: "admin",
+      products,
+      administator,
+    });
   });
 });
 
 router.get("/all-products", verifySignedIn, function (req, res) {
   let administator = req.session.admin;
   adminHelper.getAllProducts().then((products) => {
-    res.render("admin/all-products", { admin: true, products, administator });
+    res.render("admin/all-products", {
+      admin: true,
+      layout: "admin",
+      products,
+      administator,
+    });
   });
 });
 
@@ -33,6 +43,7 @@ router.get("/signup", function (req, res) {
   } else {
     res.render("admin/signup", {
       admin: true,
+      layout: "admin",
       signUpErr: req.session.signUpErr,
     });
   }
@@ -58,6 +69,7 @@ router.get("/signin", function (req, res) {
   } else {
     res.render("admin/signin", {
       admin: true,
+      layout: "admin",
       signInErr: req.session.signInErr,
     });
     req.session.signInErr = null;
@@ -85,7 +97,11 @@ router.get("/signout", function (req, res) {
 
 router.get("/add-product", verifySignedIn, function (req, res) {
   let administator = req.session.admin;
-  res.render("admin/add-product", { admin: true, administator });
+  res.render("admin/add-product", {
+    admin: true,
+    layout: "admin",
+    administator,
+  });
 });
 
 router.post("/add-product", function (req, res) {
@@ -106,7 +122,12 @@ router.get("/edit-product/:id", verifySignedIn, async function (req, res) {
   let productId = req.params.id;
   let product = await adminHelper.getProductDetails(productId);
   console.log(product);
-  res.render("admin/edit-product", { admin: true, product, administator });
+  res.render("admin/edit-product", {
+    admin: true,
+    layout: "admin",
+    product,
+    administator,
+  });
 });
 
 router.post("/edit-product/:id", verifySignedIn, function (req, res) {
@@ -139,7 +160,24 @@ router.get("/delete-all-products", verifySignedIn, function (req, res) {
 router.get("/all-users", verifySignedIn, function (req, res) {
   let administator = req.session.admin;
   adminHelper.getAllUsers().then((users) => {
-    res.render("admin/all-users", { admin: true, administator, users });
+    res.render("admin/all-users", {
+      admin: true,
+      layout: "admin",
+      administator,
+      users,
+    });
+  });
+});
+
+router.get("/quiz", verifySignedIn, function (req, res) {
+  let administator = req.session.admin;
+  adminHelper.getAllProducts().then((products) => {
+    res.render("admin/quiz", {
+      admin: true,
+      layout: "admin",
+      administator,
+      products,
+    });
   });
 });
 
@@ -161,6 +199,7 @@ router.get("/all-orders", verifySignedIn, async function (req, res) {
   let orders = await adminHelper.getAllOrders();
   res.render("admin/all-orders", {
     admin: true,
+    layout: "admin",
     administator,
     orders,
   });
@@ -175,6 +214,7 @@ router.get(
     let products = await userHelper.getOrderProducts(orderId);
     res.render("admin/order-products", {
       admin: true,
+      layout: "admin",
       administator,
       products,
     });
@@ -205,9 +245,13 @@ router.get("/cancel-all-orders", verifySignedIn, function (req, res) {
 router.post("/search", verifySignedIn, function (req, res) {
   let administator = req.session.admin;
   adminHelper.searchProduct(req.body).then((response) => {
-    res.render("admin/search-result", { admin: true, administator, response });
+    res.render("admin/search-result", {
+      admin: true,
+      layout: "admin",
+      administator,
+      response,
+    });
   });
 });
-
 
 module.exports = router;

@@ -1,5 +1,491 @@
-<center>
-    <h4 style="margin-top: 20px;">This is Quiz Page</h4>
-    <br>
-    <a href="/success" class="btn btn-l btn-light">Complete the quiz and register</a>
-</center>
+<style>
+    .card {
+        width: 90%;
+        background-color: #f0f0f0;
+        border-radius: 10px;
+        padding: 20px;
+        text-align: center;
+        margin: 0 auto;
+    }
+
+    .question {
+        text-align: left;
+        font-size: 16px;
+        font-weight: bold;
+        margin-bottom: 20px;
+    }
+
+    .options {
+        text-align: left;
+        margin-left: 15px;
+    }
+
+    .option {
+        margin-bottom: 10px;
+    }
+
+    form input,
+    form textarea {
+        border: none;
+        outline: none;
+        margin: 0;
+        padding: 0;
+        background-color: transparent;
+        padding: 1.3rem 0.2rem 1.2rem 0.2rem;
+        font: normal 400 1.6rem/1.6 "Poppins", sans-serif;
+        -webkit-transition: border 0.3s, background-color 0.3s ease-in-out;
+        -o-transition: border 0.3s, background-color 0.3s ease-in-out;
+        -moz-transition: border 0.3s, background-color 0.3s ease-in-out;
+        transition: border 0.3s, background-color 0.3s ease-in-out;
+    }
+
+    form input {}
+
+    .custom-button {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #3498db;
+        color: #fff;
+        text-decoration: none;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+    .custom-button:hover {
+        background-color: #2980b9;
+    }
+</style>
+<br><br>
+<div class="card">
+    <h6>Answer this questions, each question is worth <font color="green"><b>1</b></font> point, for a total of <font
+            color="green"><b>20</b></font>.
+    </h6>
+</div>
+<br>
+<div class="card">
+    <form action="/quiz" enctype="multipart/form-data" method="POST">
+        <div class="question">1. നബിയിൽ നിന്ന് ആദ്യം ഖുർആൻ കേട്ട വ്യക്തി ആര് ?</div>
+        <div class="options">
+            <div class="option">
+                <input type="radio" name="answer1" value="a" id="data1">
+                <label for="data1">A. അബൂബക്കർ</label>
+            </div>
+            <div class="option">
+                <input type="radio" name="answer1" value="b" id="data2">
+                <label for="data2">B. ഖദീജ</label>
+            </div>
+            <div class="option">
+                <input type="radio" name="answer1" value="c" id="data3">
+                <label for="data3">C. ആയിഷ</label>
+            </div>
+        </div>
+        <br>
+        <hr>
+        <br>
+
+        <div class="question">2. ഉമർ ഖത്താബ് (റ)ഇസ്ലാം സ്വീകരിക്കാൽ കാരണമായ സൂറത്ത്</div>
+        <div class="options">
+            <div class="option">
+                <input type="radio" name="answer2" value="a" id="data4">
+                <label for="data4">A. ത്വാഹാ</label>
+            </div>
+            <div class="option">
+                <input type="radio" name="answer2" value="b" id="data5">
+                <label for="data5">B. യാസീൻ</label>
+            </div>
+            <div class="option">
+                <input type="radio" name="answer2" value="c" id="data6">
+                <label for="data6">C. സജദ</label>
+            </div>
+        </div>
+        <br>
+        <hr>
+        <br>
+
+        <div class="question">3. സൂറത്ത് അൽ ബഖറയിൽ പറഞ്ഞ പ്രാണി ഏത്</div>
+        <div class="options">
+            <div class="option">
+                <input type="radio" name="answer3" value="a" id="data7">
+                <label for="data7">A. എട്ടുകാലി</label>
+            </div>
+            <div class="option">
+                <input type="radio" name="answer3" value="b" id="data8">
+                <label for="data8">B. ഉറുമ്പ്</label>
+            </div>
+            <div class "option">
+                <input type="radio" name="answer3" value="c" id="data9">
+                <label for="data9">C. കൊതുക്</label>
+            </div>
+        </div>
+        <br>
+        <hr>
+        <br>
+
+        <div class="question">4. സൂറത്ത് അത്തീനിൽ പറഞ്ഞ പർവ്വതം ഏത്?</div>
+        <div class="options">
+            <div class="option">
+                <input type="radio" name="answer4" value="a" id="data10">
+                <label for="data10">A. ജബലുന്നൂർ</label>
+            </div>
+            <div class="option">
+                <input type="radio" name="answer4" value="b" id="data11">
+                <label for="data11">B. ജബൽ ഖു ബൈസ്</label>
+            </div>
+            <div class="option">
+                <input type="radio" name="answer4" value="c" id="data12">
+                <label for="data12">C. ത്വൂരിസീന</label>
+            </div>
+        </div>
+        <br>
+        <hr>
+        <br>
+
+        <div class="question">5. സ്ത്രീകൾ എന്ന പേരിൽ ഖുർആനിലെ സൂറത്ത് ഏത്</div>
+        <div class="options">
+            <div class="option">
+                <input type="radio" name="answer5" value="a" id="data13">
+                <label for="data13">A. മറിയം</label>
+            </div>
+            <div class="option">
+                <input type="radio" name="answer5" value="b" id="data14">
+                <label for="data14">B. നിസാഅ</label>
+            </div>
+            <div class="option">
+                <input type="radio" name="answer5" value="c" id="data15">
+                <label for="data15">C. ജാസിയ</label>
+            </div>
+        </div>
+        <br>
+        <hr>
+        <br>
+        <div class="question">6. നബിയെ കാണാത്ത സ്വഹാബി ആര്</div>
+        <div class="options">
+            <div class="option">
+                <input type="radio" name="answer6" value="a" id="data16">
+                <label for="data16">A. ഹുദൈഫ</label>
+            </div>
+            <div class="option">
+                <input type="radio" name="answer6" value="b" id="data17">
+                <label for="data17">B. ഇബ്നുഉമ്മുമഖ്തൂം</label>
+            </div>
+            <div class="option">
+                <input type="radio" name="answer6" value="c" id="data18">
+                <label for="data18">C. ഉവൈസുൽ ഖർനി</label>
+            </div>
+        </div>
+        <br>
+        <hr>
+        <br>
+
+        <div class="question">7. എത്രാം വയസ്സിൽ ആണ് നബി പ്രവാചകനായത്</div>
+        <div class="options">
+            <div class="option">
+                <input type="radio" name="answer7" value="a" id="data19">
+                <label for="data19">A. 25</label>
+            </div>
+            <div class="option">
+                <input type="radio" name="answer7" value="b" id="data20">
+                <label for="data20">B. 53</label>
+            </div>
+            <div class="option">
+                <input type="radio" name="answer7" value="c" id="data21">
+                <label for="data21">C. 40</label>
+            </div>
+        </div>
+        <br>
+        <hr>
+        <br>
+
+        <div class="question">8. നബി വിവാഹം ചെയ്ത ആദ്യ വനിത ആര്</div>
+        <div class="options">
+            <div class="option">
+                <input type="radio" name="answer8" value="a" id="data22">
+                <label for="data22">A. ഖദീജ</label>
+            </div>
+            <div class="option">
+                <input type="radio" name="answer8" value="b" id="data23">
+                <label for="data23">B. ആയിഷ</label>
+            </div>
+            <div class="option">
+                <input type="radio" name="answer8" value="c" id="data24">
+                <label for="data24">C. സൗദ</label>
+            </div>
+        </div>
+        <br>
+        <hr>
+        <br>
+
+        <div class="question">9. നബി എത്ര ഹജ്ജ് നിർവഹിച്ചു</div>
+        <div class="options">
+            <div class="option">
+                <input type="radio" name="answer9" value="a" id="data25">
+                <label for="data25">A. ഒന്ന്</label>
+            </div>
+            <div class="option">
+                <input type="radio" name="answer9" value="b" id="data26">
+                <label for="data26">B. രണ്ട്</label>
+            </div>
+            <div class="option">
+                <input type="radio" name="answer9" value="c" id="data27">
+                <label for="data27">C. മൂന്ന്</label>
+            </div>
+        </div>
+        <br>
+        <hr>
+        <br>
+
+        <div class="question">10. ക്ഷമയെക്കുറിച്ച് പറയുമ്പോൾ പരാമർശിക്കപ്പെടുന്ന പ്രവാചകൻ ആര്</div>
+        <div class="options">
+            <div class="option">
+                <input type="radio" name="answer10" value="a" id="data28">
+                <label for="data28">A. നൂഹ്</label>
+            </div>
+            <div class="option">
+                <input type="radio" name="answer10" value="b" id="data29">
+                <label for="data29">B. യൂനുസ്</label>
+            </div>
+            <div class="option">
+                <input type="radio" name="answer10" value="c" id="data30">
+                <label for="data30">C. അയ്യൂബ്</label>
+            </div>
+        </div>
+        <br>
+        <hr>
+        <br>
+
+        <div class="question">11. സ്വതന്ത്ര ഇന്ത്യയുടെ ആദ്യത്തെ വിദ്യാഭ്യാസ മന്ത്രി ജനിച്ചത് മക്കയിൽ ആരാണത്</div>
+        <div class="options">
+            <div class="option">
+                <input type="radio" name="answer11" value="a" id="data31">
+                <label for="data31">A. ഹസ്രത്ത്മൊഹാനി</label>
+            </div>
+            <div class="option">
+                <input type="radio" name="answer11" value="b" id="data32">
+                <label for="data32">B. അബുൽ കലാം ആസാദ്</label>
+            </div>
+            <div class="option">
+                <input type="radio" name="answer11" value="c" id="data33">
+                <label for="data33">C. മൗലാന മുഹമ്മദലി</label>
+            </div>
+        </div>
+        <br>
+        <hr>
+        <br>
+
+        <div class="question">12. "ഇന്നുമുതൽ ഇന്ത്യ നമ്മുടേതാണ്" ആര് രക്തസാക്ഷി ആയപ്പോഴാണ് ബ്രിട്ടീഷ് ജനറൽ ഹാരിസൺ ഇതു
+            പറഞ്ഞത്</div>
+        <div class="options">
+            <div class="option">
+                <input type="radio" name="answer12" value="a" id="data34">
+                <label for="data34">A. ജഹാംഗീർ</label>
+            </div>
+            <div class="option">
+                <input type="radio" name="answer12" value="b" id="data35">
+                <label for="data35">B. ഔറംഗസേബ്</label>
+            </div>
+            <div class="option">
+                <input type="radio" name="answer12" value="c" id="data36">
+                <label for="data36">C. ടിപ്പുസുൽത്താൻ</label>
+            </div>
+        </div>
+        <br>
+        <hr>
+        <br>
+
+        <div class="question">13. കേരളത്തിലെ ഏക മുസ്ലിം രാജവംശം ഏത്</div>
+        <div class="options">
+            <div class="option">
+                <input type="radio" name="answer13" value="a" id="data37">
+                <label for="data37">A. അറക്കൽ</label>
+            </div>
+            <div class="option">
+                <input type="radio" name="answer13" value="b" id="data38">
+                <label for="data38">B. നഹാസ്</label>
+            </div>
+            <div class="option">
+                <input type="radio" name="answer13" value="c" id="data39">
+                <label for="data39">C. പെരുമാൾ</label>
+            </div>
+        </div>
+        <br>
+        <hr>
+        <br>
+
+        <div class="question">14. കുമാരനാശാൻ്റെ വീണപൂവ് അറബിയിലേക്ക് വിവർത്തനം ചെയ്ത മുജാഹിദ് പണ്ഡിതൻ ആര്</div>
+        <div class="options">
+            <div class="option">
+                <input type="radio" name="answer14" value="a" id="data40">
+                <label for="data40">A. കെ എം മൗലവി</label>
+            </div>
+            <div class="option">
+                <input type="radio" name="answer14" value="b" id="data41">
+                <label for="data41">B. അബുൽ കലാം ആസാദ്</label>
+            </div>
+            <div class="option">
+                <input type="radio" name="answer14" value="c" id="data42">
+                <label for="data42">C. ഉമർ മൗലവി</label>
+            </div>
+        </div>
+        <br>
+        <hr>
+        <br>
+
+        <div class="question">15. ഒന്നുകിൽ എന്റെ രാജ്യത്തിന് സ്വാതന്ത്ര്യം അല്ലെങ്കിൽ സ്വാതന്ത്ര്യം ഉള്ള രാജ്യത്ത് ആറടി
+            മണ്ണ് തരൂ എന്ന് ബ്രിട്ടീഷുകാരോട് പറഞ്ഞ ധീരനായ
+            സ്വതന്ത്ര സേനാനി ആര്</div>
+        <div class="options">
+            <div class="option">
+                <input type="radio" name="answer15" value="a" id="data43">
+                <label for="data43">A. മുഹമ്മദലി ജിന്ന</label>
+            </div>
+            <div class="option">
+                <input type="radio" name="answer15" value="b" id="data44">
+                <label for="data44">B. മൗലാനാ മുഹമ്മദലി</label>
+            </div>
+            <div class="option">
+                <input type="radio" name="answer15" value="c" id="data45">
+                <label for="data45">C. അബുൽ കലാം ആസാദ്</label>
+            </div>
+        </div>
+        <br>
+        <hr>
+        <br>
+
+        <div class="question">16. കേരള നദ്‌വത്തുൽ മുജാഹിദ്ദീൻ (KNM) ആദ്യ പ്രസിഡൻ്റിൻ്റെ പേര്</div>
+        <div class="options">
+            <div class="option">
+                <input type="radio" name="answer16" value="a" id="data46">
+                <label for="data46">A. MK ഹാജി</label>
+            </div>
+            <div class="option">
+                <input type="radio" name="answer16" value="b" id="data47">
+                <label for="data47">B. NV അബ്ദുസ്സലാം മൗലവി</label>
+            </div>
+            <div class="option">
+                <input type="radio" name="answer16" value="c" id="data48">
+                <label for="data48">C. KM മൗലവി</label>
+            </div>
+            <div class="option">
+                <input type="radio" name="answer16" value="d" id="data49">
+                <label for="data49">D. വക്കം അബ്ദുൽ ഖാദർ മൗലവി</label>
+            </div>
+        </div>
+        <br>
+        <hr>
+        <br>
+
+        <div class="question">17. MSM (മുജാഹിദ് സ്റ്റുഡൻ്റ്സ് മൂവ്മെൻ്റ്) എന്ന വിദ്യാർത്ഥി സംഘടനയുടെ മാതൃ സംഘടനയുടെ പേര്
+            എന്താണ്</div>
+        <div class="options">
+            <div class="option">
+                <input type="radio" name="answer17" value="a" id="data50">
+                <label for="data50">A. കേരള നദ്‌വത്തുൽ മുജാഹിദ്ദീൻ</label>
+            </div>
+            <div class="option">
+                <input type="radio" name="answer17" value="b" id="data51">
+                <label for="data51">B. ഇത്തിഹാദ ശുബ്ബാനുൽ മുജാഹിദ്ദീൻ</label>
+            </div>
+            <div class="option">
+                <input type="radio" name="answer17" value="c" id="data52">
+                <label for="data52">C. വിസ്ഡം ഇസ്ലാമിക് ഓർഗനൈസേഷൻ</label>
+            </div>
+            <div class="option">
+                <input type="radio" name="answer17" value="d" id="data53">
+                <label for="data53">D. മർകസ് ദാഅ് വാ</label>
+            </div>
+        </div>
+        <br>
+        <hr>
+        <br>
+
+        <div class="question">18. MSM മദ്രസ പഠനം കഴിഞ്ഞ വിദ്യാർഥികൾക്ക് വേണ്ടി ആരംഭിച്ച പാഠ്യ പദ്ധതി യുടെ പേര്?</div>
+        <div class="options">
+            <div class="option">
+                <input type="radio" name="answer18" value="a" id="data54">
+                <label for="data54">A. HIGHSEC</label>
+            </div>
+            <div class="option">
+                <input type="radio" name="answer18" value="b" id="data55">
+                <label for="data55">B. CRE</label>
+            </div>
+            <div class="option">
+                <input type="radio" name="answer18" value="c" id="data56">
+                <label for="data56">C. PROFCON</label>
+            </div>
+            <div class="option">
+                <input type="radio" name="answer18" value="d" id="data57">
+                <label for="data57">D. SIGNS</label>
+            </div>
+        </div>
+        <br>
+        <hr>
+        <br>
+
+        <div class="question">19. കേരളത്തിലെ ആദ്യത്തെ പണ്ഡിത സഭ KJU (കേരള ജംഇയ്യത്തുൽ ഉലമ) നിലവിൽ വന്ന വർഷം</div>
+        <div class="options">
+            <div class="option">
+                <input type="radio" name="answer19" value="a" id="data58">
+                <label for="data58">A. 1919</label>
+            </div>
+            <div class="option">
+                <input type="radio" name="answer19" value="b" id="data59">
+                <label for="data59">B. 1920</label>
+            </div>
+            <div class="option">
+                <input type="radio" name="answer19" value="c" id="data60">
+                <label for="data60">C. 1924</label>
+            </div>
+            <div class="option">
+                <input type="radio" name="answer19" value="d" id="data61">
+                <label for="data61">D. 1921</label>
+            </div>
+        </div>
+        <br>
+        <hr>
+        <br>
+
+        <div class="question">20. ഓർമകളുടെ തീരത്ത് എന്ന പുസ്തകത്തിൻ്റെ ഗ്രന്ഥ കർത്താവ് ആര്</div>
+        <div class="options">
+            <div class="option">
+                <input type="radio" name="answer20" value="a" id="data62">
+                <label for="data62">A. കണ്ണൂർ അബ്ദുൽ ഖാദർ മൗലവി</label>
+            </div>
+            <div class="option">
+                <input type="radio" name="answer20" value="b" id="data63">
+                <label for="data63">B. K ഉമർ മൗലവി</label>
+            </div>
+            <div class "option">
+                <input type="radio" name="answer20" value="c" id="data64">
+                <label for="data64">C. KP മുഹമ്മദ് മൗലവി</label>
+            </div>
+            <div class "option">
+                <input type="radio" name="answer20" value="d" id="data65">
+                <label for="data65">D. KM സീതി സാഹിബ്</label>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+        <input type="text" class="form-control" name="Mname" id="subject" placeholder="Your Name" required hidden {{#if
+            user}} value="{{user.Name}}" {{/if}}>
+
+        <input type="number" class="form-control" name="Mphone" id="subject" placeholder="Your Phone Number" required
+            hidden {{#if user}} value="{{user.Phone}}" {{/if}}>
+
+        <button type="submit" class="custom-button mt-4">Submit & Register</button>
+
+    </form>
+</div>
+
+<br><br><br>

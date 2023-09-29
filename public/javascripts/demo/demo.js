@@ -7,7 +7,7 @@
 // Last Update: May 2023
 // This product is available exclusively on Themeforest
 // Author: mix_design
-// Author URI: https://www.vectorcrop.com
+// Author URI: https://themeforest.net/user/mix_design
 // File name: demo.js
 // ------------------------------------------------
 
@@ -28,57 +28,60 @@
 // Table of Contents End
 // ------------------------------------------------
 
-$(window).on("load", function () {
+$(window).on("load", function() {
+
   "use strict";
 
   // --------------------------------------------- //
   // Loader Start
   // --------------------------------------------- //
-  $(".loader-logo").removeClass("fadeIn").addClass("fadeOut");
-  $(".loader").addClass("is-animated");
+  $(".loader-logo").removeClass('fadeIn').addClass('fadeOut');
+  $(".loader").addClass('is-animated');
 
-  setTimeout(function () {
-    $(".loader").addClass("loaded");
-    $("body").addClass("loaded");
-  }, 1200);
+  setTimeout(function(){
+    $(".loader").addClass('loaded');
+    $("body").addClass('loaded');
+  },1200);
   // --------------------------------------------- //
   // Loader End
   // --------------------------------------------- //
+
 });
 
-$(function () {
+$(function() {
+
   "use strict";
 
   // ----------------------------------------------- //
   // Background-attachment: fixed Solution for IE Start
   // ----------------------------------------------- //
-  if (navigator.userAgent.match(/Trident\/7\./)) {
-    $("body").on("mousewheel", function () {
-      event.preventDefault();
+  if(navigator.userAgent.match(/Trident\/7\./)) {
+    $('body').on("mousewheel", function () {
+        event.preventDefault();
 
-      var wheelDelta = event.wheelDelta;
+        var wheelDelta = event.wheelDelta;
 
-      var currentScrollPosition = window.pageYOffset;
-      window.scrollTo(0, currentScrollPosition - wheelDelta);
+        var currentScrollPosition = window.pageYOffset;
+        window.scrollTo(0, currentScrollPosition - wheelDelta);
     });
 
-    $("body").keydown(function (e) {
-      e.preventDefault(); // prevent the default action (scroll / move caret)
-      var currentScrollPosition = window.pageYOffset;
+    $('body').keydown(function (e) {
+          e.preventDefault(); // prevent the default action (scroll / move caret)
+          var currentScrollPosition = window.pageYOffset;
 
-      switch (e.which) {
-        case 38: // up
-          window.scrollTo(0, currentScrollPosition - 120);
-          break;
+          switch (e.which) {
 
-        case 40: // down
-          window.scrollTo(0, currentScrollPosition + 120);
-          break;
+              case 38: // up
+                  window.scrollTo(0, currentScrollPosition - 120);
+                  break;
 
-        default:
-          return; // exit this handler for other keys
-      }
-    });
+              case 40: // down
+                  window.scrollTo(0, currentScrollPosition + 120);
+                  break;
+
+              default: return; // exit this handler for other keys
+          }
+      });
   }
   // --------------------------------------------- //
   // Background-attachment: fixed Solution for IE End
@@ -87,11 +90,11 @@ $(function () {
   // --------------------------------------------- //
   // SVG Fallback Start
   // --------------------------------------------- //
-  if (!Modernizr.svg) {
-    $("img[src*='svg']").attr("src", function () {
+  if(!Modernizr.svg) {
+    $("img[src*='svg']").attr("src", function() {
       return $(this).attr("src").replace(".svg", ".png");
     });
-  }
+  };
   // --------------------------------------------- //
   // SVG Fallback End
   // --------------------------------------------- //
@@ -101,10 +104,11 @@ $(function () {
   // --------------------------------------------- //
   try {
     $.browserSelector();
-    if ($("html").hasClass("chrome")) {
+    if($("html").hasClass("chrome")) {
       $.smoothScroll();
     }
-  } catch (err) {}
+  } catch(err) {
+  };
   // --------------------------------------------- //
   // Chrome Smooth Scroll End
   // --------------------------------------------- //
@@ -112,9 +116,7 @@ $(function () {
   // --------------------------------------------- //
   // Images Moving Ban Start
   // --------------------------------------------- //
-  $("img, a").on("dragstart", function (event) {
-    event.preventDefault();
-  });
+  $("img, a").on("dragstart", function(event) { event.preventDefault(); });
   // --------------------------------------------- //
   // Images Moving Ban End
   // --------------------------------------------- //
@@ -124,11 +126,11 @@ $(function () {
   // --------------------------------------------- //
   function fullscreenLayout() {
     $(".fullscreen").css({
-      height: $(window).height(),
+        height: $(window).height()
     });
-  }
+  };
   fullscreenLayout();
-  $(window).resize(function () {
+  $(window).resize(function(){
     fullscreenLayout();
   });
   // --------------------------------------------- //
@@ -139,28 +141,24 @@ $(function () {
   // Smooth Scroll To Top Start
   // --------------------------------------------- //
   var offset = 300,
-    offset_opacity = 1200,
-    scroll_top_duration = 500,
-    $back_to_top = $(".to-top");
+      offset_opacity = 1200,
+      scroll_top_duration = 500,
+      $back_to_top = $('.to-top');
 
-  $(window).scroll(function () {
-    $(this).scrollTop() > offset
-      ? $back_to_top.addClass("is-visible")
-      : $back_to_top.removeClass("is-visible fade-out");
-    if ($(this).scrollTop() > offset_opacity) {
-      $back_to_top.addClass("fade-out");
-    }
-  });
+	$(window).scroll(function(){
+		( $(this).scrollTop() > offset ) ? $back_to_top.addClass('is-visible') : $back_to_top.removeClass('is-visible fade-out');
+		if( $(this).scrollTop() > offset_opacity ) {
+			$back_to_top.addClass('fade-out');
+		}
+	});
 
-  $back_to_top.on("click", function (event) {
-    event.preventDefault();
-    $("body,html").animate(
-      {
-        scrollTop: 0,
-      },
-      scroll_top_duration
-    );
-  });
+	$back_to_top.on('click', function(event){
+		event.preventDefault();
+		$('body,html').animate({
+			scrollTop: 0 ,
+		 	}, scroll_top_duration
+		);
+	});
   // --------------------------------------------- //
   // Smooth Scroll To Top End
   // --------------------------------------------- //
@@ -168,22 +166,20 @@ $(function () {
   // --------------------------------------------- //
   // Smooth Scroll To Section Start
   // --------------------------------------------- //
-  var scrollToPreview = $(".scroll-to-preview");
+  var scrollToPreview = $('.scroll-to-preview');
 
-  scrollToPreview.on("click", function (event) {
+  scrollToPreview.on('click', function(event){
     event.preventDefault();
     smoothScroll($(this.hash));
   });
 
-  function smoothScroll(target) {
-    $("body,html").animate(
-      {
-        scrollTop: target.offset().top,
-      },
-      500
-    );
-  }
+  function smoothScroll(target){
+    $('body,html').animate({
+      scrollTop: target.offset().top,
+    }, 500);
+  };
   // --------------------------------------------- //
   // Smooth Scroll To Section End
   // --------------------------------------------- //
+
 });
